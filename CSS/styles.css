@@ -4,11 +4,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Helvetica;
+    font-family: Helvetica, sans-serif;
 }
 
 body {
     background-color: #fafafa;
+    color: #262626;
 }
 
 /* Container */
@@ -33,19 +34,25 @@ body {
     margin-right: 15px;
     margin-top: 25px;
     max-width: 380px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 #form-container {
     text-align: center;
+    animation: fadeIn 1s ease-in-out;
 }
 
 /* Login Form */
 
 #form-box {
-    background-color: #fff;
+    background: linear-gradient(135deg, #ffffff, #f0f0f0);
     border: 1px solid #dbdbdb;
     width: 350px;
     margin-top: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    animation: popUp 0.5s ease-in-out;
 }
 
 #logo-insta {
@@ -64,13 +71,19 @@ body {
     padding: 12px 9px;
     background-color: #fafafa;
     border: 1px solid #dbdbdb;
-    border-radius: 3px;
+    border-radius: 5px;
     width: 268px;
     margin: 5px auto;
+    outline-color: #b2dffc;
+    transition: box-shadow 0.3s ease;
+}
+
+#login-form input:focus {
+    box-shadow: 0 0 8px rgba(0, 149, 255, 0.5);
 }
 
 #login-form input[type="submit"] {
-    background-color: #b2dffc;
+    background: linear-gradient(135deg, #57b4f6, #004aad);
     color: #fff;
     margin-top: 15px;
     border-radius: 5px;
@@ -79,6 +92,11 @@ body {
     padding: 0;
     font-weight: bold;
     cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#login-form input[type="submit"]:hover {
+    background: linear-gradient(135deg, #004aad, #003a85);
 }
 
 /* Separador */
@@ -116,6 +134,13 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    font-weight: bold;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+#facebook-login a:hover {
+    color: #233a77;
 }
 
 #facebook-login img {
@@ -140,16 +165,24 @@ body {
 #forgot-pass a {
     text-decoration: none;
     color: #373799;
+    transition: color 0.3s ease;
+}
+
+#forgot-pass a:hover {
+    color: #262676;
 }
 
 /* Register */
 
 #register-container {
-    background-color: #fff;
+    background: linear-gradient(135deg, #ffffff, #f0f0f0);
     border: 1px solid #dbdbdb;
     width: 350px;
     margin-top: 10px;
     padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    animation: slideIn 0.6s ease-out;
 }
 
 #register-container p {
@@ -161,6 +194,11 @@ body {
     color: #4a95f6;
     font-weight: bold;
     text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#register-container a:hover {
+    color: #2357a5;
 }
 
 /* Get App */
@@ -168,6 +206,7 @@ body {
 #get-app-container {
     text-align: center;
     width: 360px;
+    margin-top: 20px;
 }
 
 #get-app-container p {
@@ -175,14 +214,21 @@ body {
     font-size: 13px;
 }
 
-#get-app-container a {
-    text-decoration: none;
+#get-app-container img {
+    width: 136px;
+    height: 40px;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+#get-app-container img:hover {
+    transform: scale(1.05);
 }
 
 /* Footer */
 
 footer {
-    text-align: left;
+    text-align: center;
     width: 1000px;
     margin: 50px auto;
     display: flex;
@@ -205,15 +251,47 @@ footer #footer-links {
     text-decoration: none;
     color: #8e8e8e;
     font-size: 12px;
+    transition: color 0.3s ease;
 }
 
-#copyright {
-    margin-top: 10px;
+#footer-links a:hover, 
+#copyright:hover {
+    color: #333;
 }
 
-#get-app-container img {
-    width: 136px;
-    height: 40px;
+#get-app-container a {
+    text-decoration: none;
+}
+
+/* Animações */
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes popUp {
+    0% {
+        transform: scale(0.95);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 /* Mobile */
